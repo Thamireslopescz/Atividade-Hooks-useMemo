@@ -85,7 +85,8 @@ yarn add react@16.8.0 react-dom@16.8.0
 
 Após instalar o React, você pode começar a utilizar os Hooks em seus componentes funcionais. Lembre-se de consultar a [documentação oficial do React](https://pt-br.react.dev/reference/react) para mais informações sobre os Hooks disponíveis e como utilizá-los em sua aplicação.
 
-![Captura de tela 2023-08-15 093219.png](Atividade%20Hooks%20-%20Grupo%20f9eefd4f36584ce58346c9fca1d5f26a/Captura_de_tela_2023-08-15_093219.png)
+![Captura de tela 2023-08-15 093219.png](<img width="947" alt="Captura_de_tela_2023-08-15_093219" src="https://github.com/Thamireslopescz/Atividade-Hooks-useMemo/assets/100656019/43a4ef83-c3c4-49f7-b244-687d36c34d7b">
+)
 
 # Custom Hooks: Construindo Hooks Personalizados para Chamadas de API em React
 
