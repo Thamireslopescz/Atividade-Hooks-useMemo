@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ShoppingCart = ({ cartItems, removeFromCart }) => (
-  <div class="shopping-cart product-list">
+  <div className="shopping-cart product-list">
   <h2>🛒 Carrinho de Compras:</h2>
   <table>
     <thead>
