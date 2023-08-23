@@ -13,9 +13,16 @@ function App() {
   // State para armazenar os itens do carrinho
   const [cartItems, setCartItems] = useState([]);
 
-  // useMemo é usado para calcular o valor total do carrinho apenas quando cartItems é modificado
+  // Cálculo do valor total do carrinho SEM useMemo (apenas para fins de comparação)
+  /*const total = () => {
+    console.log("Calculando sem useMemo");
+    return cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+  };*/
+    
+
+  // useMemo é usado para calcular o valor total do carrinho apenas quando cartItems é modificado 
   const total = useMemo(() => {
-    console.log("Calculating total...");
+    console.log("Calculando com useMemo");
 
     // Calcula o valor total somando o preço de cada produto multiplicado pela quantidade
     return cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
