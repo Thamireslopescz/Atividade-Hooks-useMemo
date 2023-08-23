@@ -10,26 +10,36 @@ const productsData = [
 ];
 
 function App() {
+  // State para armazenar os itens do carrinho
   const [cartItems, setCartItems] = useState([]);
 
+  // useMemo é usado para calcular o valor total do carrinho apenas quando cartItems é modificado
   const total = useMemo(() => {
+    console.log("Calculating total...");
+
+    // Calcula o valor total somando o preço de cada produto multiplicado pela quantidade
     return cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
   }, [cartItems]);
 
+  // Função para adicionar um produto ao carrinho
   const addToCart = product => {
     const existingItem = cartItems.find(item => item.product.id === product.id);
 
     if (existingItem) {
+      // Atualiza a quantidade se o produto já estiver no carrinho
       const updatedCart = cartItems.map(item =>
         item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
       );
       setCartItems(updatedCart);
     } else {
+      // Adiciona um novo item ao carrinho se o produto ainda não estiver nele
       setCartItems([...cartItems, { product, quantity: 1 }]);
     }
   };
 
+  // Função para remover um produto do carrinho
   const removeFromCart = product => {
+    // Filtra os itens do carrinho, mantendo apenas os que não correspondem ao produto removido
     const updatedCart = cartItems.filter(item => item.product.id !== product.id);
     setCartItems(updatedCart);
   };
